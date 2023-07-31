@@ -1,6 +1,7 @@
 module io.curiositycore.chunkcomber {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.bukkit;
 
 
     opens io.curiositycore.chunkcomber to javafx.fxml;
