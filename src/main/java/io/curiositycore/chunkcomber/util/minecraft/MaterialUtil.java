@@ -7,8 +7,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class MaterialUtil {
-    public static List<String> getItemNames(ScalableTypes scalableTypes){
-        switch(scalableTypes){
+    public static List<String> getItemNames(ScanableTypes scanableTypes){
+        switch(scanableTypes){
             case ORES:
                 return getNamesFromMaterials("_ORE");
         }

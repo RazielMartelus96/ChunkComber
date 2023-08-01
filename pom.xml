@@ -19,6 +19,10 @@
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
@@ -42,6 +46,16 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>17.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.minion325</groupId>
+            <artifactId>Region-Manipulator</artifactId>
+            <version>a9842a668b</version>
+        </dependency>
+        <dependency>
+            <groupId>br.com.gamemods</groupId>
+            <artifactId>nbt-manipulator</artifactId>
+            <version>3.1.0</version>
         </dependency>
 
         <dependency>

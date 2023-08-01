@@ -1,5 +1,5 @@
 package io.curiositycore.chunkcomber.util.minecraft;
 
-public enum ScalableTypes {
+public enum ScanableTypes {
     ORES;
 }

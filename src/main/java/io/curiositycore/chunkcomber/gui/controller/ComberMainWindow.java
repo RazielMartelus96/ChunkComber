@@ -1,7 +1,7 @@
 package io.curiositycore.chunkcomber.gui.controller;
 
 import io.curiositycore.chunkcomber.util.minecraft.MaterialUtil;
-import io.curiositycore.chunkcomber.util.minecraft.ScalableTypes;
+import io.curiositycore.chunkcomber.util.minecraft.ScanableTypes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -47,7 +47,7 @@ public class ComberMainWindow {
     }
     @FXML
     private void blockClickEvent(){
-        ObservableList<String> stringList = FXCollections.observableArrayList(MaterialUtil.getItemNames(ScalableTypes.ORES));
+        ObservableList<String> stringList = FXCollections.observableArrayList(MaterialUtil.getItemNames(ScanableTypes.ORES));
         //ObservableList<String> stringList = FXCollections.observableArrayList("Ores","Containers","Wood","Xp Farm Blocks");
         eventHandler(this.blocks,stringList);
     }

@@ -2,6 +2,8 @@ module io.curiositycore.chunkcomber {
     requires javafx.controls;
     requires javafx.fxml;
     requires org.bukkit;
+    requires br.com.gamemods.nbtmanipulator;
+    requires Region.Manipulator.a9842a668b;
 
 
     opens io.curiositycore.chunkcomber to javafx.fxml;
