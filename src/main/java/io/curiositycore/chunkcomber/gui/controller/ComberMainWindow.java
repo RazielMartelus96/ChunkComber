@@ -1,12 +1,21 @@
 package io.curiositycore.chunkcomber.gui.controller;
 
+import io.curiositycore.chunkcomber.ChunkComber;
+import io.curiositycore.chunkcomber.gui.util.LoadedWorldDataUtil;
 import io.curiositycore.chunkcomber.util.minecraft.MaterialUtil;
 import io.curiositycore.chunkcomber.util.minecraft.ScanableTypes;
+import io.curiositycore.chunkcomber.util.minecraft.WorldDataUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+
+import java.io.File;
+import java.util.ArrayList;
 
 /**
  *
@@ -28,6 +37,14 @@ public class ComberMainWindow {
     private CheckBox enchantments;
     @FXML
     private CheckBox blocks;
+    @FXML
+    private Label regionAmount;
+    @FXML
+    private Label playerAmount;
+    @FXML
+    private Label fileSize;
+    @FXML
+    private Label worldSelectedName;
 
     @FXML
     private void petClickEvent(){
@@ -62,6 +79,15 @@ public class ComberMainWindow {
         ObservableList<String> stringList = FXCollections.observableArrayList("Container1","Container2","Container3");
         eventHandler(this.containers,stringList);
     }
+
+    @FXML
+    private void chooseWorldFile(){
+        DirectoryChooser worldChooser = new DirectoryChooser();
+
+        File selectedFile = worldChooser.showDialog(ChunkComber.getMainWindowStage());
+        LoadedWorldDataUtil.setWorldLabels(selectedFile,new Label[]{regionAmount,playerAmount,fileSize,worldSelectedName});
+    }
+
     private void eventHandler(CheckBox boxToHandle, ObservableList<String> checkBoxitems){
         if(!boxToHandle.isSelected()){
             remove(checkBoxitems);
@@ -78,5 +104,7 @@ public class ComberMainWindow {
         addableItems.getItems().removeAll(itemsToRemove);
 
     }
+
+
 
 }

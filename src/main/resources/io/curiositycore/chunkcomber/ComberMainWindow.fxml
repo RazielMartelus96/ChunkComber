@@ -72,12 +72,12 @@
          <children>
             <AnchorPane prefHeight="143.0" prefWidth="311.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" prefHeight="38.0" prefWidth="211.0" text="World selected:">
+                  <Label fx:id="worldSelectedName" alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" prefHeight="38.0" prefWidth="211.0" text="World selected:">
                      <font>
                         <Font name="Leelawadee UI" size="17.0" />
                      </font>
                   </Label>
-                  <Button layoutX="112.0" layoutY="37.0" mnemonicParsing="false" text="Browse World" />
+                  <Button layoutX="112.0" layoutY="37.0" mnemonicParsing="false" onAction="#chooseWorldFile" text="Browse World" />
                </children>
             </AnchorPane>
             <GridPane prefHeight="81.0" prefWidth="297.0" GridPane.rowIndex="1">
@@ -98,7 +98,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <Label layoutX="148.0" layoutY="10.0" text="Proxy" />
+                        <Label fx:id="regionAmount" layoutX="148.0" layoutY="10.0" text="Proxy" />
                         <Separator layoutX="-195.0" layoutY="-15.0" prefHeight="18.0" prefWidth="747.0" />
                      </children>
                   </AnchorPane>
@@ -109,7 +109,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Label layoutX="149.0" layoutY="12.0" text="Proxy" />
+                        <Label fx:id="playerAmount" layoutX="149.0" layoutY="12.0" text="Proxy" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -119,7 +119,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="42.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label layoutX="147.0" layoutY="16.0" text="Proxy" />
+                        <Label fx:id="fileSize" layoutX="147.0" layoutY="16.0" text="Proxy" />
                         <Separator layoutX="-187.0" layoutY="44.0" prefHeight="21.0" prefWidth="673.0" />
                      </children>
                   </AnchorPane>
