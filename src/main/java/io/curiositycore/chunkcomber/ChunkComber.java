@@ -13,7 +13,7 @@ public class ChunkComber extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ChunkComber.class.getResource("ComberMainWindow.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 636, 452);
-        stage.setTitle("ChunkComber");
+        stage.setTitle("TerraScope");
         stage.setScene(scene);
         stage.show();
 

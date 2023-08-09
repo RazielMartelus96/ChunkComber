@@ -13,6 +13,7 @@ import org.bukkit.Material;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class ChunkUtil {
@@ -22,7 +23,8 @@ public class ChunkUtil {
         NbtList<NbtCompound> blockEntitiesList = chunk.getCompound().getCompoundList("block_entities");
         for (NbtCompound blockEntity : blockEntitiesList){
             try {
-                containerSet.add(getContainer(blockEntity, null, 0));
+                Container container = getContainer(blockEntity, null, 0);
+                containerSet.add(container);
             } catch (Exception e){
 
 
@@ -36,7 +38,8 @@ public class ChunkUtil {
 
     private static Container getContainer(NbtCompound blockEntity, @Nullable String pos, @Nullable Integer slot){
         NbtList<NbtCompound> containerItemsList = blockEntity.getCompoundList("Items");
-        return new ConcreteContainer(getContainerContents(containerItemsList),
+        return new ConcreteContainer(
+                getContainerContents(containerItemsList),
                 blockEntity.getString("id"),
                 getBlockEntityLocation(blockEntity));
     }
@@ -72,6 +75,11 @@ public class ChunkUtil {
     }
 
     private static Point3D getBlockEntityLocation(NbtCompound blockEntity){
-        return new Point3D(blockEntity.getInt("x"), blockEntity.getInt("y"), blockEntity.getInt("z"));
+        try{
+            return new Point3D(blockEntity.getInt("x"), blockEntity.getInt("y"), blockEntity.getInt("z"));
+        }
+        catch(NoSuchElementException noSuchElementException) {
+            return null;
+        }
     }
 }

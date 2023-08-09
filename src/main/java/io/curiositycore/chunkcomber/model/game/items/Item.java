@@ -9,7 +9,6 @@ public interface Item extends Deletable, Searchable {
     String getName();
     int getAmount();
     int getSlot();
-    Container getContainer();
     void setContainer(Container container);
     Material getMaterial();
 

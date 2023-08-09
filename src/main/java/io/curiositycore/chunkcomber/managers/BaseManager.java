@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public abstract class BaseManager<T extends Identifiable> implements Manager<T>{
+public abstract class BaseManager<T extends Identifiable> implements Manager<T,UUID>{
     protected Map<UUID,T> managerCache = new HashMap<>();
 
     @Override

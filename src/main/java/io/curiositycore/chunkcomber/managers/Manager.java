@@ -2,8 +2,8 @@ package io.curiositycore.chunkcomber.managers;
 
 import java.util.UUID;
 
-public interface Manager<T> {
+public interface Manager<T,I> {
     void register(T objectToUnregister);
-    void unregister(UUID objectId);
+    void unregister(I objectId);
 
 }

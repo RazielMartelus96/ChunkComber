@@ -1,4 +1,5 @@
 module io.curiositycore.chunkcomber {
+    requires javafx.base;
     requires javafx.controls;
     requires javafx.fxml;
     requires org.bukkit;
@@ -8,7 +9,7 @@ module io.curiositycore.chunkcomber {
     requires kotlin.reflect;
     requires kotlin.stdlib;
 
-
+    opens io.curiositycore.chunkcomber.model.game.items to javafx.base;
     opens io.curiositycore.chunkcomber to javafx.fxml;
     exports io.curiositycore.chunkcomber;
     exports io.curiositycore.chunkcomber.gui.controller;

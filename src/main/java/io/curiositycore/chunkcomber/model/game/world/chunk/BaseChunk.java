@@ -2,13 +2,14 @@ package io.curiositycore.chunkcomber.model.game.world.chunk;
 
 import br.com.gamemods.regionmanipulator.Chunk;
 import br.com.gamemods.regionmanipulator.ChunkPos;
+import io.curiositycore.chunkcomber.model.Deletable;
 import io.curiositycore.chunkcomber.model.game.Searchable;
 import javafx.geometry.Point2D;
 
 import java.util.Set;
 import java.util.UUID;
 
-public abstract class BaseChunk<T extends Searchable> implements ScannableChunk<T> {
+public abstract class BaseChunk<T extends Searchable> implements ScannableChunk<T>{
     protected Point2D location;
     protected Set<T> containers;
     protected Chunk chunk;
@@ -33,5 +34,8 @@ public abstract class BaseChunk<T extends Searchable> implements ScannableChunk<
     @Override
     public void scan() {
         this.containers = initContents(this.chunk);
+        this.chunk = null;
     }
+
+
 }

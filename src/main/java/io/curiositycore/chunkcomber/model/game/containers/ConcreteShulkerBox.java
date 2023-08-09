@@ -1,20 +1,21 @@
 package io.curiositycore.chunkcomber.model.game.containers;
 
 import io.curiositycore.chunkcomber.model.game.items.Item;
+import io.curiositycore.chunkcomber.util.minecraft.NameUtil;
 import javafx.geometry.Point3D;
 import org.bukkit.Material;
 
 import java.util.Set;
 
 public class ConcreteShulkerBox implements ShulkerBox{
-    private String shulkerBoxName;
+    private int shulkerBoxNameId;
     private Container shulkerBoxContainer;
     private String shulkerBoxColor;
     private int slot;
     private Material shulkerBoxMaterial;
 
     public ConcreteShulkerBox(String shulkerBoxName, String shulkerBoxColor,Container shulkerBoxContainer, int slot, Material shulkerBoxMaterial){
-        this.shulkerBoxName = shulkerBoxName;
+        this.shulkerBoxNameId = NameUtil.setId(shulkerBoxName);
         this.shulkerBoxColor = shulkerBoxColor;
         this.shulkerBoxContainer = shulkerBoxContainer;
         this.slot = slot;
@@ -41,6 +42,11 @@ public class ConcreteShulkerBox implements ShulkerBox{
     }
 
     @Override
+    public int getId() {
+        return this.shulkerBoxNameId;
+    }
+
+    @Override
     public void setContainerFields() {
         this.shulkerBoxContainer.setContainerFields();
     }
@@ -52,7 +58,7 @@ public class ConcreteShulkerBox implements ShulkerBox{
 
     @Override
     public String getName() {
-        return this.shulkerBoxName;
+        return NameUtil.getName(this.shulkerBoxNameId);
     }
 
     @Override
@@ -66,10 +72,6 @@ public class ConcreteShulkerBox implements ShulkerBox{
     }
 
 
-    @Override
-    public Container getContainer() {
-        return this.shulkerBoxContainer;
-    }
 
     @Override
     public void setContainer(Container container) {

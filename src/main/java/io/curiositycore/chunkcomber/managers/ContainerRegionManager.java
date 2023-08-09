@@ -5,10 +5,21 @@ import io.curiositycore.chunkcomber.model.game.world.region.ContainerChunkRegion
 import io.curiositycore.chunkcomber.model.table.ConcreteItemTable;
 import io.curiositycore.chunkcomber.model.table.ItemTable;
 
+import java.io.File;
+
 
 public class ContainerRegionManager extends BaseRegionManager{
+
     private static ContainerRegionManager instance;
 
+    public File getWorldFile() {
+        return worldFile;
+    }
+    public void setWorldFile(File worldFile) {
+        this.worldFile = worldFile;
+    }
+
+    private File worldFile;
     private ContainerRegionManager() {
     }
 
@@ -44,4 +55,9 @@ public class ContainerRegionManager extends BaseRegionManager{
         }
         return true;
     }
+
+    public int getRegionAmount(){
+        return this.managerCache.size();
+    }
+
 }

@@ -10,5 +10,6 @@ public interface Container extends Searchable {
     Set<Item> getContents();
     Item getItem(int slot);
     Point3D getLocation();
+    int getId();
     void setContainerFields();
 }

@@ -7,6 +7,7 @@ import javafx.geometry.Point2D;
 
 import java.io.File;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ContainerChunk extends BaseChunk<Container> implements ScannableChunk<Container> {
     public ContainerChunk(Chunk chunk) {
@@ -45,7 +46,7 @@ public class ContainerChunk extends BaseChunk<Container> implements ScannableChu
 
     @Override
     protected Set<Container> initContents(Chunk chunk) {
-        return ChunkUtil.getContainers(chunk);
+        return ChunkUtil.getContainers(chunk).stream().filter(container -> !container.getContents().isEmpty()).collect(Collectors.toSet());
     }
 
 }
